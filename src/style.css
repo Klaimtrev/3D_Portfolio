@@ -42,3 +42,10 @@ section:nth-child(odd)
 {
     justify-content: flex-end;
 }
+
+.font-grape{
+    font-family: 'Grape Nuts', cursive;
+}
+.font-novaMono{
+    font-family: 'Nova Mono', monospace;
+}
