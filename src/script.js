@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import * as dat from 'lil-gui'
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 /**
  * Debug
@@ -25,6 +26,19 @@ const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
+
+/**
+ * Imported Models
+ */
+const gltfLoader = new GLTFLoader()
+console.log(gltfLoader)
+
+gltfLoader.load(
+    '/models/TestModel.glb',
+    (gltf)=>{
+        scene.add(gltf.scene)
+    }
+)
 
 /**
  * Texture
@@ -75,6 +89,9 @@ const sectionMeshes = [mesh1,mesh2,mesh3]
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight.position.set(1,1,0)
 scene.add(directionalLight)
+
+const ambientLight = new THREE.AmbientLight(0xffffff,1)
+scene.add(ambientLight)
 
 
 /**
