@@ -49,3 +49,9 @@ section:nth-child(odd)
 .font-novaMono{
     font-family: 'Nova Mono', monospace;
 }
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
